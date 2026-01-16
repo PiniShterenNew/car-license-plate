@@ -16,7 +16,7 @@ export default async function AdminSettingsPage() {
 
   return (
     <div className="space-y-8">
-      <h1 className="text-3xl font-bold">הגדרות</h1>
+      <h1 className="text-3xl font-bold text-[#121417] dark:text-white">הגדרות</h1>
 
       <SettingsForm initialCpm={settings.cpm} initialCpc={settings.cpc} />
 

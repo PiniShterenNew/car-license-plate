@@ -21,12 +21,12 @@ const config = {
       colors: {
         // Stitch exact colors
         primary: {
-          DEFAULT: "#1f66ad",
+          DEFAULT: "#3263a8",
           dark: "#164c85",
         },
         secondary: "#f0f2f4",
-        "background-light": "#fafafa",
-        "background-dark": "#1a1d23",
+        "background-light": "#f8fafc",
+        "background-dark": "#0f172a",
         "surface-light": "#ffffff",
         "surface-dark": "#2a2e35",
         "text-main": "#121417",
@@ -63,10 +63,11 @@ const config = {
         },
       },
       fontFamily: {
-        display: ["Public Sans", "Noto Sans Hebrew", "sans-serif"],
+        display: ["Assistant", "Public Sans", "Noto Sans Hebrew", "sans-serif"],
         mono: ["Courier New", "Public Sans", "monospace"],
       },
       borderRadius: {
+        DEFAULT: "0.75rem",
         lg: "0.5rem",
         xl: "0.75rem",
         "2xl": "1rem",

@@ -64,12 +64,12 @@ export function ContactMessageActions({ message }: ContactMessageActionsProps) {
 
   return (
     <>
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-1 md:gap-2">
         <Button
           variant="ghost"
           size="sm"
           onClick={() => setIsOpen(true)}
-          className="h-8 px-2"
+          className="h-8 w-8 md:w-auto md:px-2 p-0 md:p-2"
           title="צפה בהודעה"
         >
           <MessageSquare className="w-4 h-4" />
@@ -80,7 +80,7 @@ export function ContactMessageActions({ message }: ContactMessageActionsProps) {
             size="sm"
             onClick={() => updateStatus('READ')}
             disabled={isLoading}
-            className="h-8 px-2"
+            className="h-8 w-8 md:w-auto md:px-2 p-0 md:p-2"
             title="סמן כנקרא"
           >
             <Eye className="w-4 h-4" />
@@ -92,7 +92,7 @@ export function ContactMessageActions({ message }: ContactMessageActionsProps) {
             size="sm"
             onClick={() => updateStatus('REPLIED')}
             disabled={isLoading}
-            className="h-8 px-2"
+            className="h-8 w-8 md:w-auto md:px-2 p-0 md:p-2"
             title="סמן כנענה"
           >
             <Reply className="w-4 h-4" />
@@ -104,7 +104,7 @@ export function ContactMessageActions({ message }: ContactMessageActionsProps) {
             size="sm"
             onClick={() => updateStatus('ARCHIVED')}
             disabled={isLoading}
-            className="h-8 px-2"
+            className="h-8 w-8 md:w-auto md:px-2 p-0 md:p-2"
             title="העבר לארכיון"
           >
             <Archive className="w-4 h-4" />
@@ -113,7 +113,7 @@ export function ContactMessageActions({ message }: ContactMessageActionsProps) {
       </div>
 
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
+        <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto mx-4 md:mx-auto">
           <DialogHeader>
             <DialogTitle>{message.subject}</DialogTitle>
             <DialogDescription>

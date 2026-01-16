@@ -29,7 +29,7 @@ export function MobileMenuButton() {
     <>
       <button 
         onClick={() => setIsOpen(!isOpen)}
-        className="md:hidden p-2 text-[#657586] hover:bg-[#f0f2f4] rounded-lg transition-colors"
+        className="md:hidden p-2 text-[#657586] dark:text-slate-400 hover:bg-[#f0f2f4] dark:hover:bg-slate-800 rounded-lg transition-colors"
         aria-label="תפריט"
       >
         {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}

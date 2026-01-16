@@ -21,7 +21,7 @@ export default async function AdminAdsPage({ searchParams }: PageProps) {
   return (
     <div className="space-y-8">
       <div className="flex items-center justify-between">
-        <h1 className="text-3xl font-bold">דוחות והכנסות</h1>
+        <h1 className="text-3xl font-bold text-[#121417] dark:text-white">דוחות והכנסות</h1>
         <Tabs defaultValue={range}>
           <TabsList>
             <TabsTrigger value="7d" asChild>
