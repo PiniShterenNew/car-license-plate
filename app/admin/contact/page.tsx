@@ -64,7 +64,7 @@ export default async function AdminContactPage({ searchParams }: PageProps) {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         <Card>
           <CardHeader className="pb-3">
-            <CardTitle className="text-sm font-medium text-[#657586]">סה"כ הודעות</CardTitle>
+            <CardTitle className="text-sm font-medium text-[#657586]">סה&quot;כ הודעות</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-[#121417]">{total}</div>

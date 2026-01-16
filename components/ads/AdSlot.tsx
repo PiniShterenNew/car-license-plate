@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useCallback } from 'react'
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
 
@@ -14,14 +14,7 @@ interface AdSlotProps {
 export function AdSlot({ slotKey, pagePath, variant = 'banner', className = '' }: AdSlotProps) {
   const [impressionLogged, setImpressionLogged] = useState(false)
 
-  useEffect(() => {
-    if (!impressionLogged) {
-      logAdEvent('IMPRESSION')
-      setImpressionLogged(true)
-    }
-  }, [impressionLogged])
-
-  const logAdEvent = async (eventType: 'IMPRESSION' | 'CLICK') => {
+  const logAdEvent = useCallback(async (eventType: 'IMPRESSION' | 'CLICK') => {
     try {
       await fetch('/api/ads/event', {
         method: 'POST',
@@ -35,7 +28,14 @@ export function AdSlot({ slotKey, pagePath, variant = 'banner', className = '' }
     } catch (error) {
       console.error('Failed to log ad event:', error)
     }
-  }
+  }, [slotKey, pagePath])
+
+  useEffect(() => {
+    if (!impressionLogged) {
+      logAdEvent('IMPRESSION')
+      setImpressionLogged(true)
+    }
+  }, [impressionLogged, logAdEvent])
 
   const handleClick = () => {
     logAdEvent('CLICK')

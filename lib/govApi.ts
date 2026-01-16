@@ -57,6 +57,7 @@ export interface VehicleData {
   safetyLevel: string | null
   pollutionGroup: string | null
   engineModel: string | null
+  vehicleType: string | null
   
   // New Fields
   frontTire: string | null

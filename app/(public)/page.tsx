@@ -25,7 +25,7 @@ export default function HomePage() {
         </h1>
 
         <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mb-12 font-normal leading-relaxed">
-          קבל את כל המידע הרשמי, היסטוריית בעלויות, שעבודים וקילומטראז' בשניות.
+          קבל את כל המידע הרשמי, היסטוריית בעלויות, שעבודים וקילומטראז&apos; בשניות.
           <span className="hidden sm:inline"> השירות אמין, מהיר ומדויק.</span>
         </p>
 

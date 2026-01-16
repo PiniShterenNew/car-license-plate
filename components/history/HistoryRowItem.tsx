@@ -177,7 +177,7 @@ export function HistoryRowItem({
           {/* Additional Info */}
           {(mileage !== null && mileage !== undefined) && (
             <div className="flex flex-col items-end mr-4 text-xs text-[#657586] dark:text-gray-400 opacity-60">
-              <span>ק"מ אחרון: {mileage.toLocaleString()}</span>
+              <span>ק&quot;מ אחרון: {mileage.toLocaleString()}</span>
             </div>
           )}
           

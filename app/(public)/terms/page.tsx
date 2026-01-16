@@ -73,7 +73,7 @@ export default function TermsPage() {
             </CardHeader>
             <CardContent>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                CheckCar מסופקת "כפי שהיא" ללא כל אחריות מפורשת או משתמעת. אנו לא נהיה אחראים לכל נזק ישיר, עקיף, מקרי או תוצאתי הנובע משימוש או אי-יכולת להשתמש בשירות.
+                CheckCar מסופקת &quot;כפי שהיא&quot; ללא כל אחריות מפורשת או משתמעת. אנו לא נהיה אחראים לכל נזק ישיר, עקיף, מקרי או תוצאתי הנובע משימוש או אי-יכולת להשתמש בשירות.
               </p>
             </CardContent>
           </Card>
