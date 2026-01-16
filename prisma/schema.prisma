@@ -1,0 +1,137 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Visitor {
+  id         String   @id @default(cuid())
+  createdAt  DateTime @default(now())
+  lastSeenAt DateTime @default(now())
+
+  searchEvents SearchEvent[]
+  adEvents     AdEvent[]
+
+  @@index([lastSeenAt])
+}
+
+model Vehicle {
+  id              String   @id @default(cuid())
+  plateNormalized String   @unique
+  plateFormatted  String
+  manufacturer    String
+  modelName       String
+  year            Int?
+  trimLevel       String?
+  ownership       String?
+  licenseValidUntil DateTime?
+  lastTestDate    DateTime?
+  color           String?
+  safetyLevel     String?
+  pollutionGroup  String?
+  engineModel     String?
+  vehicleType     String?  // sug_degem - סוג דגם (סדאן, SUV וכו')
+  frontTire       String?
+  rearTire        String?
+  fuelType        String?
+  roadDate        DateTime?
+  commercialName  String?
+  lastFetchedAt   DateTime @default(now())
+  sourceName      String   @default("data.gov.il")
+
+  searchEvents SearchEvent[]
+
+  @@index([lastFetchedAt])
+  @@index([plateNormalized])
+}
+
+model SearchEvent {
+  id             String        @id @default(cuid())
+  visitorId      String
+  vehicleId      String?
+  plateNormalized String
+  plateFormatted String
+  resultStatus   ResultStatus
+  licenseStatus  LicenseStatus
+  responseMs     Int
+  createdAt      DateTime      @default(now())
+  userAgent      String?
+  ipHash         String?
+
+  visitor Visitor @relation(fields: [visitorId], references: [id], onDelete: Cascade)
+  vehicle Vehicle? @relation(fields: [vehicleId], references: [id], onDelete: SetNull)
+
+  @@index([visitorId])
+  @@index([createdAt])
+  @@index([plateNormalized])
+}
+
+model AdEvent {
+  id         String      @id @default(cuid())
+  visitorId  String?
+  slotKey    String
+  pagePath   String
+  eventType  AdEventType
+  createdAt  DateTime    @default(now())
+
+  visitor Visitor? @relation(fields: [visitorId], references: [id], onDelete: SetNull)
+
+  @@index([visitorId])
+  @@index([createdAt])
+  @@index([slotKey])
+  @@index([pagePath])
+}
+
+model AppSetting {
+  key   String @id
+  value String
+
+  @@map("app_settings")
+}
+
+model ContactMessage {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  subject   String
+  message   String
+  status    ContactStatus @default(PENDING)
+  createdAt DateTime @default(now())
+  readAt    DateTime?
+  repliedAt DateTime?
+
+  @@index([status])
+  @@index([createdAt])
+  @@index([email])
+}
+
+enum ResultStatus {
+  FOUND
+  NOT_FOUND
+  ERROR
+}
+
+enum LicenseStatus {
+  VALID
+  EXPIRED
+  UNKNOWN
+}
+
+enum AdEventType {
+  IMPRESSION
+  CLICK
+}
+
+enum ContactStatus {
+  PENDING
+  READ
+  REPLIED
+  ARCHIVED
+}

@@ -1,0 +1,22 @@
+---
+alwaysApply: true
+---
+Quality rules:
+
+- TypeScript strict mode only
+- No `any`
+- No unused code
+- No console.logs in production code
+
+Code quality:
+- Clear naming
+- Small functions
+- Explicit types
+
+Testing:
+- Tests are optional unless requested
+- Code must be testable by design
+
+Documentation:
+- Explain non-obvious decisions briefly
+- Do not over-comment obvious code

@@ -1,0 +1,25 @@
+---
+alwaysApply: true
+---
+You are working on a real production-grade project.
+
+Absolute rules:
+- Do not invent features
+- Do not guess missing requirements
+- Do not simplify logic unless explicitly instructed
+- Do not skip steps
+- Do not leave TODOs
+- Do not use mock data unless explicitly allowed
+
+This project must be:
+- Fully functional
+- Deterministic
+- Production-ready
+- Explainable
+
+If any requirement is unclear:
+- Stop
+- Ask explicitly
+- Do not assume
+
+You must follow all rules defined in this folder.

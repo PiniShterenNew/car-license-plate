@@ -1,0 +1,22 @@
+---
+alwaysApply: true
+---
+Backend rules:
+
+- All external API calls must be done server-side only
+- All external responses must be validated
+- No blind trust in external data
+
+API routes:
+- Must be thin controllers
+- No heavy logic inside route handlers
+- Delegate logic to lib/
+
+Error handling:
+- No silent failures
+- Always return structured JSON errors
+- Never expose raw external API errors to the client
+
+Security:
+- Secrets only via environment variables
+- Admin access must be protected explicitly

@@ -1,0 +1,22 @@
+---
+alwaysApply: true
+---
+Database rules:
+
+- PostgreSQL is mandatory
+- Prisma is the only DB access layer
+
+Schema design:
+- Normalize data
+- Avoid duplication
+- Use explicit relations
+- Use indexes where appropriate
+
+Persistence rules:
+- Store only meaningful data
+- Never store raw external API payloads blindly
+- Always store timestamps
+
+Migrations:
+- Schema changes must be intentional
+- No destructive migrations unless instructed

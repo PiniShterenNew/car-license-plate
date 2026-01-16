@@ -1,0 +1,25 @@
+---
+alwaysApply: true
+---
+UI & Design rules:
+
+- Stitch outputs are mid-fidelity only
+- Do not treat Stitch as final design
+- UI must be implementable in Tailwind
+
+Visual language:
+- Professional
+- Trustworthy
+- Calm
+- No playful or gamified elements
+
+Design priorities:
+1. Clarity
+2. Readability
+3. Hierarchy
+4. Accessibility
+
+Ads:
+- Ads must not interrupt core flows
+- Ads are visually separated
+- Ads are clearly marked

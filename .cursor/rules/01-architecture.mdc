@@ -1,0 +1,21 @@
+---
+alwaysApply: true
+---
+Architecture rules:
+
+- This is a Next.js App Router project
+- Server Components are default
+- Client Components only when required (state, effects, browser APIs)
+
+Separation of concerns is mandatory:
+- app/ → routing and composition only
+- lib/ → business logic and integrations
+- components/ → UI only
+- prisma/ → database schema only
+
+Forbidden:
+- Business logic inside React components
+- Direct DB access from components
+- Mixing server logic into client files
+
+Every layer must have a single responsibility.

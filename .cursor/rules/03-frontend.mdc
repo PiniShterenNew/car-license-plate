@@ -1,0 +1,22 @@
+---
+alwaysApply: true
+---
+Frontend rules:
+
+- UI components are presentational only
+- No data fetching logic inside UI components
+- No business rules inside JSX
+
+State:
+- Use local state only when unavoidable
+- Prefer server data and props
+
+Accessibility:
+- Semantic HTML
+- Keyboard accessible
+- Proper labels
+- RTL support is mandatory
+
+Performance:
+- Avoid unnecessary re-renders
+- Lazy-load non-critical components (ads, charts)
